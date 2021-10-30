@@ -55,8 +55,13 @@ bool Heap::IsValidHeapObject(HeapObject) { return false; }
 
 // static
 bool Heap::IsValidCodeObject(HeapObject) { return false; }
+bool Heap::IsImmovable(HeapObject object) { return false; }
+bool Heap::InLargeObjectSpace(Address address) { return false; }
 
+void Heap::ResetIterator() {return; }
+HeapObject Heap::NextObject() { return HeapObject(); }
 bool Heap::CollectGarbage() { return false; }
+size_t Heap::Capacity() { return 0; }
 
 }  // namespace third_party_heap
 }  // namespace internal
